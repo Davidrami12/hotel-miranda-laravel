@@ -35,7 +35,7 @@
                             <p class="roomSlider__slides__container--price">
                                 ${{ $room->price ?? '$245' }}<span class="roomSlider__slides__container--price--perNight">/Night</span>
                             </p>
-                            <a href="room-details.php?id={{ $room->room_id }}"  class="roomSlider__slides__container--bookNow">Book now</a>
+                            <a href="{{ route('room.details', ['id' => $room->room_id]) }}" class="roomSlider__slides__container--bookNow">Book now</a>
                         </div>
                     </div>
                     @endforeach

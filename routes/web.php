@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoomsController;
+use App\Http\Controllers\RoomController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,9 +30,9 @@ Route::get('/about', function () {
 
 Route::get('/rooms', [RoomsController::class, 'index']);
 
-Route::get('/room-details', function () {
-    return view('room-details');
-});
+Route::get('/room-details/{id}', [RoomController::class, 'show'])->name('room.details');
+
+
 
 Route::get('/offers', function () {
     return view('offers');

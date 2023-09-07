@@ -19,12 +19,12 @@
 
 
         <section class="roomSection">
-            <p class="roomSection__subtitle">{{ $room['type'] ?? 'DOUBLE BED' }}</p>
-            <h1 class="roomSection__title">{{ $room['name'] ?? 'Luxury Double Bed' }}</h1>
+            <p class="roomSection__subtitle">{{ $room->type ?? 'DOUBLE BED' }}</p>
+            <h1 class="roomSection__title">{{ $room->name ?? 'Luxury Double Bed' }}</h1>
             <p class="roomSection__price">
-                ${{ $room['price'] ?? '345' }}<span class="roomSection__price--perNight">/Night</span>
+                ${{ $room->price ?? '345' }}<span class="roomSection__price--perNight">/Night</span>
             </p>
-            <img class="roomSlider__slides--roomImg" src="{{ $room['image_url'] }}" alt="Hotel room" />
+            <img class="roomSlider__slides--roomImg" src="{{ $room->image_url }}" alt="Hotel room" />
         </section>
 
 
