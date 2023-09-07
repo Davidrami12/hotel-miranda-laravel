@@ -21,10 +21,39 @@
         <section class="roomSection">
             <p class="roomSection__subtitle">{{ $room->type ?? 'DOUBLE BED' }}</p>
             <h1 class="roomSection__title">{{ $room->name ?? 'Luxury Double Bed' }}</h1>
-            <p class="roomSection__price">
-                ${{ $room->price ?? '345' }}<span class="roomSection__price--perNight">/Night</span>
-            </p>
+            <p class="roomSection__price"> ${{ $room->price ?? '345' }}<span class="roomSection__price--perNight">/Night</span></p>
             <img class="roomSlider__slides--roomImg" src="{{ $room->image_url }}" alt="Hotel room" />
+        </section>
+
+        <section class="roomSectionDesktop">
+            <div class="roomSectionDesktop__container">
+              <div class="roomSectionDesktop__container__subcontainer">
+                <p class="roomSectionDesktop__container__subcontainer__subtitle">{{ $room->type ?? 'DOUBLE BED' }}</p>
+                <h1 class="roomSectionDesktop__container__subcontainer__title">{{ $room->name ?? 'Luxury Double Bed' }}</h1>
+              </div>
+              <p class="roomSectionDesktop__container__price">${{ $room->price ?? '345' }}<span class="roomSectionDesktop__container__price--perNight">/Night</span>
+              </p>
+            </div>
+    
+            <img class="roomSectionDesktop__roomImg" src="{{ $room->image_url }}" alt="Hotel room" />
+            <p class="roomSectionDesktop__text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+              minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+              aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum. Sed ut
+              perspiciatis unde omnis iste natus error sit voluptatem accusantium
+              doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
+              inventore veritatis et quasi architecto beatae vitae dicta sunt
+              explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
+              odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+              voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum
+              quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
+              eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
+              voluptatem.
+            </p>
         </section>
 
 

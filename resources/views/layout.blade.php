@@ -26,7 +26,7 @@
                         <div class="nav__container__menu--logo nav__container__menu--logo--favicon">
                             <span>H</span>
                         </div>
-                        <a href="index.php">
+                        <a href="index">
                             <img class="nav__container__menu--logo nav__container__menu--logo--title"
                                 src="src/assets/icons/logo.svg" alt="Hotel Title">
                         </a>
