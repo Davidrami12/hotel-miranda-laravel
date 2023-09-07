@@ -25,17 +25,17 @@
                     <div style="position: relative">
                         <img class="roomSlider__slides--extras" src="src/assets/imgs/room-info.svg"
                             alt="Room extras" />
-                        <img class="roomSlider__slides--roomImg" src="{{ $room['image_url'] }}"
+                        <img class="roomSlider__slides--roomImg" src="{{ $room->image_url }}"
                             alt="Hotel room" />
-                        <h1 class="roomSlider__slides--title">{{ $room["name"] }}</h1>
+                        <h1 class="roomSlider__slides--title">{{ $room->name ?? 'Double Superior' }}</h1>
                         <p class="roomSlider__slides--description">
-                            {{ $room["description"] }}
+                            {{ $room->description }}
                         </p>
                         <div class="roomSlider__slides__container">
                             <p class="roomSlider__slides__container--price">
-                                ${{ $room["price"] }}<span class="roomSlider__slides__container--price--perNight">/Night</span>
+                                ${{ $room->price ?? '$245' }}<span class="roomSlider__slides__container--price--perNight">/Night</span>
                             </p>
-                            <a href="room-details.php?id={{$room['room_id']}}"  class="roomSlider__slides__container--bookNow">Book now</a>
+                            <a href="room-details.php?id={{ $room->room_id }}"  class="roomSlider__slides__container--bookNow">Book now</a>
                         </div>
                     </div>
                     @endforeach
