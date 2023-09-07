@@ -62,8 +62,8 @@
 
         
 
-        <form class="contactFormSection" action="contact.php" method="POST">
-
+        <form class="contactFormSection" action="{{ route('contact.store') }}" method="POST">
+            @csrf
         
             <div class="contactFormSection__firstContainer">
                 <div class="contactFormSection__firstContainer__input">
@@ -103,18 +103,16 @@
             </div>
             <button type="submit" class="btn">SEND</button>
 
-            @if($isSubmitted)
-                @if(!empty($errors))
-                    <ul>
-                    @foreach($errors as $error)
+            @if ($errors->any())
+                <ul>
+                    @foreach ($errors->all() as $error)
                         <h1>{{ $error }}</h1>
                     @endforeach
-                    </ul>
-                @endif
+                </ul>
+            @endif
 
-                @if(!empty($message))
-                    <h1>{{ $message }}</h1>
-                @endif
+            @if(session('success'))
+                <h1>{{ session('success') }}</h1>
             @endif
         </form>
     </main>
