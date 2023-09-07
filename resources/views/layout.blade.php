@@ -33,10 +33,10 @@
                     </div>
                 </div>
                 <div class="nav__menu">
-                    <a href="about.php" class="nav__item">About Us</a>
-                    <a href="rooms.php" class="nav__item">Rooms</a>
-                    <a href="offers.php" class="nav__item">Offers</a>
-                    <a href="contact.php" class="nav__item">Contact</a>
+                    <a href="about" class="nav__item">About Us</a>
+                    <a href="rooms" class="nav__item">Rooms</a>
+                    <a href="offers" class="nav__item">Offers</a>
+                    <a href="contact" class="nav__item">Contact</a>
                 </div>
                 <div>
                     <div class="nav__container nav__container__functionalities">
