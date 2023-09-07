@@ -21,29 +21,18 @@
             @foreach($rooms as $room)
                 <div class="offerRoomSection__room">
                     <div class="offerRoomSection__room__priceContainer">
-                        <p class="offerRoomSection__room__priceContainer--gold">${{ $room['price'] }}</p>
-                        <p class="offerRoomSection__room__priceContainer--perNightGold">
-                            /Night
-                        </p>
-                        <p class="offerRoomSection__room__priceContainer--red">${{ $room['price'] * (1 - ($room['discount'] / 100)) }}</p>
-                        <p class="offerRoomSection__room__priceContainer--perNightRed">
-                            /Night
-                        </p>
+                        <p class="offerRoomSection__room__priceContainer--gold">${{ $room->price }}</p>
+                        <p class="offerRoomSection__room__priceContainer--perNightGold">/Night</p>
+                        <p class="offerRoomSection__room__priceContainer--red">${{ $room->price * (1 - ($room->discount / 100)) }}</p>
+                        <p class="offerRoomSection__room__priceContainer--perNightRed">/Night</p>
                     </div>
-                    <img class="offerRoomSection__room__img" src="{{ $room['image_url'] }}" alt="Room image" />
+                    <img class="offerRoomSection__room__img" src="{{ $room->image_url }}" alt="Room image" />
                     <div class="offerRoomSection__room__bigContainer">
-                        <p class="offerRoomSection__room__bigContainer__subtitle">
-                            {{ strtoupper($room['bed_type']) }}
-                        </p>
-                        <h1 class="offerRoomSection__room__bigContainer__title">
-                            {{ $room['description'] }}
-                        </h1>
+                        <p class="offerRoomSection__room__bigContainer__subtitle">{{ strtoupper($room->bed_type) }}</p>
+                        <h1 class="offerRoomSection__room__bigContainer__title">{{ $room->description }}</h1>
                         <div class="offerRoomSection__room__bigContainer__separation"></div>
                         <div class="offerRoomSection__room__bigContainer__smallContainer">
-                            <p class="offerRoomSection__room__bigContainer__smallContainer__description">
-                                {{ $room['cancellation'] }}
-                            </p>
-                            
+                            <p class="offerRoomSection__room__bigContainer__smallContainer__description">{{ $room->cancellation }}</p>
                             <button class="btn">BOOK NOW</button>
                         </div>
                     </div>

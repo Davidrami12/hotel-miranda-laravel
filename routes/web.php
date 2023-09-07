@@ -1,10 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoomsController;
 use App\Http\Controllers\RoomController;
+use App\Http\Controllers\OffersController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,11 +33,7 @@ Route::get('/rooms', [RoomsController::class, 'index']);
 
 Route::get('/room-details/{id}', [RoomController::class, 'show'])->name('room.details');
 
-
-
-Route::get('/offers', function () {
-    return view('offers');
-});
+Route::get('/offers', [OffersController::class, 'index'])->name('offers.index');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
