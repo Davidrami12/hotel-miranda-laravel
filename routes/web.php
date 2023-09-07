@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +15,12 @@ use App\Http\Controllers\ContactController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/* Route::get('/index', function () {
+    return view('index');
+}); */
 
-// add index too
+Route::get('/', [HomeController::class, 'index'])->name('home.index');
+Route::get('/availability-check', [HomeController::class, 'availabilityCheck'])->name('home.availabilityCheck');
 
 Route::get('/about', function () {
     return view('about');

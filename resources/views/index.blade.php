@@ -26,7 +26,8 @@
         </section>
 
         <section class="availabilitySection">
-            <form class="availabilitySection__container" action="index.php" action="GET">
+            <form class="availabilitySection__container" action="{{ route('home.availabilityCheck') }}" action="GET">
+                @csrf
                 <div class="availabilitySection__container availabilitySection__container__arrival">
                     <p class="availabilitySection__container__arrival availabilitySection__container__arrival--text">
                         Arrival Date
@@ -45,11 +46,9 @@
                         type="date" name="departure" required/>
                 </div>
 
-                <!-- Mostrar validación de disponible u ocupado aquí-->
-                @if($availabilityMessage)
+                @if(!empty($availabilityMessage))
                     <h1 style="color: white;">{{ $availabilityMessage }}</h1>
                 @endif
-
 
                 <button type="submit" id="submit" class="availabilitySection__container availabilitySection__container__button btn">
                     CHECK AVAILABILITY
