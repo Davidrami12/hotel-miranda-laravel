@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $availabilityMessage = "";  // Always set an initial value
+        $availabilityMessage = "";
         return view('index', ['availabilityMessage' => $availabilityMessage]);
     }
 
