@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Contact;
 
 class ContactController extends Controller
 {
@@ -21,12 +22,21 @@ class ContactController extends Controller
             'subject' => 'required',
             'message' => 'required',
         ]);
-
-        if ($validated) {
-            $message = "Form submitted successfully!";
-
-            // Redirect and show feedback
-            return redirect()->route('contact.index')->with('success', $message);
-        }
+    
+        $contact = new Contact([
+            'contact_name' => $request->name,
+            'contact_email' => $request->email,
+            'contact_phone' => $request->phone,
+            'contact_date' => now()->toDateString(),
+            'subject' => $request->subject,
+            'comment' => $request->message,
+        ]);
+    
+        $contact->save();
+    
+        $message = "Form submitted successfully!";
+    
+        // Redirect and show feedback
+        return redirect()->route('contact.index')->with('success', $message);
     }
 }
