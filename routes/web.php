@@ -25,7 +25,7 @@ Route::get('/about', function () {
 });
 
 Route::get('/rooms', [RoomsController::class, 'index'])->name('rooms.index');
-Route::get('/room-details/{id}', [RoomsController::class, 'show'])->name('room.details');
+Route::get('/rooms/{id}', [RoomsController::class, 'show'])->name('room.details');
 
 Route::get('/offers', [OffersController::class, 'index'])->name('offers.index');
 

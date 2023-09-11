@@ -19,23 +19,23 @@
 
 
         <section class="roomSection">
-            <p class="roomSection__subtitle">{{ $room->type ?? 'DOUBLE BED' }}</p>
-            <h1 class="roomSection__title">{{ $room->name ?? 'Luxury Double Bed' }}</h1>
-            <p class="roomSection__price"> ${{ $room->price ?? '345' }}<span class="roomSection__price--perNight">/Night</span></p>
-            <img class="roomSlider__slides--roomImg" src="{{ $room->image_url }}" alt="Hotel room" />
+            <p class="roomSection__subtitle">{{ $room->bed_type }}</p>
+            <h1 class="roomSection__title">{{ $room->description }}</h1>
+            <p class="roomSection__price"> ${{ $room->price }}<span class="roomSection__price--perNight">/Night</span></p>
+            <img class="roomSlider__slides--roomImg" src="{{ $room->images->first()->url_image }}" alt="Hotel room" />
         </section>
 
         <section class="roomSectionDesktop">
             <div class="roomSectionDesktop__container">
               <div class="roomSectionDesktop__container__subcontainer">
-                <p class="roomSectionDesktop__container__subcontainer__subtitle">{{ $room->type ?? 'DOUBLE BED' }}</p>
-                <h1 class="roomSectionDesktop__container__subcontainer__title">{{ $room->name ?? 'Luxury Double Bed' }}</h1>
+                <p class="roomSectionDesktop__container__subcontainer__subtitle">{{ $room->bed_type }}</p>
+                <h1 class="roomSectionDesktop__container__subcontainer__title">{{ $room->description }}</h1>
               </div>
-              <p class="roomSectionDesktop__container__price">${{ $room->price ?? '345' }}<span class="roomSectionDesktop__container__price--perNight">/Night</span>
+              <p class="roomSectionDesktop__container__price">${{ $room->price }}<span class="roomSectionDesktop__container__price--perNight">/Night</span>
               </p>
             </div>
     
-            <img class="roomSectionDesktop__roomImg" src="{{ $room->image_url }}" alt="Hotel room" />
+            <img class="roomSectionDesktop__roomImg" src="{{ $room->images->first()->url_image }}" alt="Hotel room" />
             <p class="roomSectionDesktop__text">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad

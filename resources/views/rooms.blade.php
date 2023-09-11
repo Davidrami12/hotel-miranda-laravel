@@ -25,7 +25,7 @@
                     <div style="position: relative">
                         <img class="roomSlider__slides--extras" src="src/assets/imgs/room-info.svg"
                             alt="Room extras" />
-                        <img class="roomSlider__slides--roomImg" src="{{ $room->image_url }}"
+                        <img class="roomSlider__slides--roomImg" src="{{ $room->images->first()->url_image }}"
                             alt="Hotel room" />
                         <h1 class="roomSlider__slides--title">{{ $room->name ?? 'Double Superior' }}</h1>
                         <p class="roomSlider__slides--description">
