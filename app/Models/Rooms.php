@@ -9,10 +9,14 @@ class Rooms extends Model
 {
     use HasFactory;
 
-    protected $table = 'rooms';  // El nombre de la tabla. Si sigue las convenciones de Laravel, esto es opcional.
-    protected $primaryKey = 'room_id';  // Definir la clave primaria si no es 'id'.
+    protected $table = 'rooms';
+    protected $primaryKey = 'room_id'; 
 
-    // Relación con la tabla rooms_images
+    public function bookings() 
+    {
+        return $this->hasMany(Bookings::class, 'room_id', 'room_id');
+    }
+
     public function images()
     {
         return $this->hasMany(RoomImages::class, 'room_id', 'room_id');

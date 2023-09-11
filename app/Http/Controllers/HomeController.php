@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Rooms;
+use App\Models\Booking;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -20,28 +23,24 @@ class HomeController extends Controller
         $arrival = $request->input('arrival');
         $departure = $request->input('departure');
 
-        $roomIDs = DB::select("SELECT room_id FROM rooms");
+        $roomsWithBookings = Rooms::whereHas('bookings', function ($query) use ($arrival, $departure) {
+            $query->where(function ($query) use ($arrival, $departure) {
+                $query->whereBetween('checkin', [$arrival, $departure])
+                    ->orWhereBetween('checkout', [$arrival, $departure])
+                    ->orWhere(function ($query) use ($arrival, $departure) {
+                        $query->where('checkin', '<=', $arrival)
+                                ->where('checkout', '>=', $arrival);
+                    })
+                    ->orWhere(function ($query) use ($arrival, $departure) {
+                        $query->where('checkin', '<=', $departure)
+                                ->where('checkout', '>=', $departure);
+                    });
+            });
+        })->count();
 
-        $allAvailable = true;
+        $allRooms = Rooms::count();
 
-        // Check availability for each room
-        foreach ($roomIDs as $room) {
-            $roomId = $room->room_id;
-            $result = DB::select("SELECT * FROM bookings
-                                  WHERE room_id = :roomId AND
-                                    ((checkin BETWEEN :arrival AND :departure) OR
-                                    (checkout BETWEEN :arrival AND :departure) OR
-                                    (:arrival BETWEEN checkin AND checkout) OR
-                                    (:departure BETWEEN checkin AND checkout))", 
-                                    ['roomId' => $roomId, 'arrival' => $arrival, 'departure' => $departure]);
-
-            if (count($result) > 0) {
-                $allAvailable = false;
-                break;
-            }
-        }
-
-        $availabilityMessage = $allAvailable ? "All rooms are available for the selected dates!" : "Sorry, there are no rooms available.";
+        $availabilityMessage = ($roomsWithBookings < $allRooms) ? "Rooms available for the selected dates!" : "Sorry, there are no rooms available.";
 
         return view('index', ['availabilityMessage' => $availabilityMessage]);
     }
