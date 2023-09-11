@@ -20,7 +20,7 @@
             <div class="nav__container">
                 <div class="nav__container nav__container__menu">
                     <div class="nav__container__menu nav__container__menu--burger">
-                        <img id="mobileMenuBurguer" src="{{ asset('assets/icons/menu.svg') }}"  alt="Menu icon">
+                        <img id="mobileMenuBurguer" src="{{ asset('assets/icons/menu.svg') }}" alt="Menu icon">
                     </div>
                     <div class="nav__container__menu nav__container__menu--logo">
                         <div class="nav__container__menu--logo nav__container__menu--logo--favicon">
