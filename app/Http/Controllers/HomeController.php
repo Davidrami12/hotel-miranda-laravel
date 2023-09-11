@@ -29,12 +29,11 @@ class HomeController extends Controller
             $roomId = $room->room_id;
             $result = DB::select("SELECT * FROM bookings
                                   WHERE room_id = :roomId AND
-                                  (
-                                      (checkin BETWEEN :arrival AND :departure) OR
-                                      (checkout BETWEEN :arrival AND :departure) OR
-                                      (:arrival BETWEEN checkin AND checkout) OR
-                                      (:departure BETWEEN checkin AND checkout)
-                                  )", ['roomId' => $roomId, 'arrival' => $arrival, 'departure' => $departure]);
+                                    ((checkin BETWEEN :arrival AND :departure) OR
+                                    (checkout BETWEEN :arrival AND :departure) OR
+                                    (:arrival BETWEEN checkin AND checkout) OR
+                                    (:departure BETWEEN checkin AND checkout))", 
+                                    ['roomId' => $roomId, 'arrival' => $arrival, 'departure' => $departure]);
 
             if (count($result) > 0) {
                 $allAvailable = false;

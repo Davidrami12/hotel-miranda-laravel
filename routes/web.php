@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoomsController;
-use App\Http\Controllers\RoomController;
 use App\Http\Controllers\OffersController;
 use App\Http\Controllers\ContactController;
 
@@ -18,10 +17,6 @@ use App\Http\Controllers\ContactController;
 |
 */
 
-/* Route::get('/', function () {
-    return view('welcome');
-}); */
-
 Route::get('/index', [HomeController::class, 'index'])->name('home.index');
 Route::get('/availability-check', [HomeController::class, 'availabilityCheck'])->name('home.availabilityCheck');
 
@@ -29,9 +24,8 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/rooms', [RoomsController::class, 'index']);
-
-Route::get('/room-details/{id}', [RoomController::class, 'show'])->name('room.details');
+Route::get('/rooms', [RoomsController::class, 'index'])->name('rooms.index');
+Route::get('/room-details/{id}', [RoomsController::class, 'show'])->name('room.details');
 
 Route::get('/offers', [OffersController::class, 'index'])->name('offers.index');
 
