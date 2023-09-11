@@ -20,29 +20,29 @@
             <div class="nav__container">
                 <div class="nav__container nav__container__menu">
                     <div class="nav__container__menu nav__container__menu--burger">
-                        <img id="mobileMenuBurguer" src="src/assets/icons/menu.svg" alt="Menu icon">
+                        <img id="mobileMenuBurguer" src="{{ asset('assets/icons/menu.svg') }}"  alt="Menu icon">
                     </div>
                     <div class="nav__container__menu nav__container__menu--logo">
                         <div class="nav__container__menu--logo nav__container__menu--logo--favicon">
                             <span>H</span>
                         </div>
-                        <a href="index">
+                        <a href="/index">
                             <img class="nav__container__menu--logo nav__container__menu--logo--title"
-                                src="src/assets/icons/logo.svg" alt="Hotel Title">
+                            src="{{ asset('assets/icons/logo.svg') }}" alt="Hotel Title">
                         </a>
                     </div>
                 </div>
                 <div class="nav__menu">
-                    <a href="about" class="nav__item">About Us</a>
-                    <a href="rooms" class="nav__item">Rooms</a>
-                    <a href="offers" class="nav__item">Offers</a>
-                    <a href="contact" class="nav__item">Contact</a>
+                    <a href="/about" class="nav__item">About Us</a>
+                    <a href="/rooms" class="nav__item">Rooms</a>
+                    <a href="/offers" class="nav__item">Offers</a>
+                    <a href="/contact" class="nav__item">Contact</a>
                 </div>
                 <div>
                     <div class="nav__container nav__container__functionalities">
-                        <img class="nav__container__functionalities--person" src="src/assets/icons/person.svg"
+                        <img class="nav__container__functionalities--person" src="{{ asset('assets/icons/person.svg') }}"
                             alt="User icon">
-                        <img class="nav__container__functionalities--search" src="src/assets/icons/search.svg"
+                        <img class="nav__container__functionalities--search" src="{{ asset('assets/icons/search.svg') }}"
                             alt="Search icon">
                     </div>
                 </div>
@@ -61,7 +61,7 @@
             <div class="footer__container1__subcontainer1">
                 <div class="footer__container1__subcontainer1__header">
                     <h1>H</h1>
-                    <img src="src/assets/icons/logo.svg" alt="Hotel name" />
+                    <img src="{{ asset('assets/icons/logo.svg') }}" alt="Hotel name" />
                 </div>
                 <p class="footer__container1__subcontainer1__description">
                     Lorem ipsum dolor sit amet, consect etur adipisicing elit, sed doing
@@ -153,7 +153,7 @@
                 <div class="footer__container1__subcontainer3__contact">
                     <div class="footer__container1__subcontainer3__contact__one">
                         <img class="footer__container1__subcontainer3__contact__one__icon"
-                            src="src/assets/icons/phone.svg" alt="Contact icon" />
+                            src="{{ asset('assets/icons/phone.svg') }}" alt="Contact icon" />
                         <div class="footer__container1__subcontainer3__contact__one__data">
                             <p class="footer__container1__subcontainer3__contact__one__data__title">
                                 Phone Number
@@ -165,7 +165,7 @@
                     </div>
                     <div class="footer__container1__subcontainer3__contact__one">
                         <img class="footer__container1__subcontainer3__contact__one__icon"
-                            src="src/assets/icons/mail.svg" alt="Contact icon" />
+                            src="{{ asset('assets/icons/mail.svg') }}" alt="Contact icon" />
                         <div class="footer__container1__subcontainer3__contact__one__data">
                             <p class="footer__container1__subcontainer3__contact__one__data__title">
                                 Mail
@@ -177,7 +177,7 @@
                     </div>
                     <div class="footer__container1__subcontainer3__contact__one">
                         <img class="footer__container1__subcontainer3__contact__one__icon"
-                            src="src/assets/icons/location.svg" alt="Contact icon" />
+                            src="{{ asset('assets/icons/location.svg') }}" alt="Contact icon" />
                         <div class="footer__container1__subcontainer3__contact__one__data">
                             <p class="footer__container1__subcontainer3__contact__one__data__title">
                                 Our Location
@@ -207,7 +207,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script type="text/javascript" src="src/js/scripts.js"></script>
+    <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
 </body>
 
 </html>
