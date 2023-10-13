@@ -1,1 +1,1 @@
-Rewritten hotel miranda page in Laravel + php
+Rewritten hotel miranda page in Laravel + php + Blade
